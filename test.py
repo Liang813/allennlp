@@ -41,3 +41,11 @@ def check_nan_grads(words):
             return
 
     print()
+
+# This works fine.
+example_safe = ["An", "example"]
+check_nan_grads(example_safe)
+
+# This produces NaN grads because of the empty string.
+example_bad_empty = ["An", "", "example"]
+check_nan_grads(example_bad_empty)
