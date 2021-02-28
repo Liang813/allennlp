@@ -41,20 +41,3 @@ def check_nan_grads(words):
             return
 
     print()
-
-
-####################
-
-# This works fine.
-example_safe = ["An", "example"]
-check_nan_grads(example_safe)
-
-# This produces NaN grads because of the empty string.
-example_bad_empty = ["An", "", "example"]
-check_nan_grads(example_bad_empty)
-
-# This produces NaN grads because there's a weird character the indexer doesn't know about.
-weird_character = "\uf732\uf730\uf730\uf733"
-print(f"Weird character: {weird_character}.")
-example_bad_unicode = ["A", weird_character, "example"]
-check_nan_grads(example_bad_unicode)
