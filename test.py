@@ -34,12 +34,12 @@ def check_nan_grads(words):
         grad = param.grad
         if grad is not None and torch.any(torch.isnan(param.grad)):
             print("Found NaN grad.")
+            print("nan")
             print("Offending tensor_dict:")
             print(tensor_dict)
             print()
             return
 
-    print("No NaN's.")
     print()
 
 
